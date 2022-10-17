@@ -19,6 +19,12 @@ const connect = function() {
     conn.write("Name: Kb");
   });
 
+  // conn.on("connect", () => {
+  //   setTimeout(() => {
+  //     conn.write("Move: up");
+  //   }, 50);
+  // });
+
   return conn;
 };
 
