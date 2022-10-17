@@ -25,6 +25,14 @@ const handleUserInput = function(key) {
   } else if (key === "d") {
     console.log("D Key");
     connection.write("Move: right");
+  } else if (key === "1") {
+    connection.write("Say: Wow");
+  } else if (key === "2") {
+    connection.write("Say: OMG!");
+  } else if (key === "3") {
+    connection.write("Say: Close");
+  } else if (key === "4") {
+    connection.write("Say: GG!");
   } else if (key === '\u0003') {
     process.exit();
   }
