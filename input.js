@@ -1,5 +1,6 @@
 // Stores the active TCP connection object.
 let connection;
+let { USER_CONTROLS } = require("./constants");
 
 const setupInput = function(conn) {
   connection = conn;
@@ -12,29 +13,23 @@ const setupInput = function(conn) {
 };
 
 const handleUserInput = function(key) {
-  // Keys
-  if (key === "w") {
-    console.log("W Key");
-    connection.write("Move: up");
-  } else if (key === "a") {
-    console.log("A Key");
-    connection.write("Move: left");
-  } else if (key === "s") {
-    console.log("S Key");
-    connection.write("Move: down");
-  } else if (key === "d") {
-    console.log("D Key");
-    connection.write("Move: right");
-  } else if (key === "1") {
-    connection.write("Say: Wow");
-  } else if (key === "2") {
-    connection.write("Say: OMG!");
-  } else if (key === "3") {
-    connection.write("Say: Close");
-  } else if (key === "4") {
-    connection.write("Say: GG!");
-  } else if (key === '\u0003') {
+  if (key === '\u0003') {
     process.exit();
+  }
+  
+  for (const i in USER_CONTROLS) {
+    if (key === USER_CONTROLS[i].keybind) {
+      const keyPress = USER_CONTROLS[i].keybind;
+      const direction = USER_CONTROLS[i].direction;
+      const message = USER_CONTROLS[i].message;
+      if (direction !== undefined) {
+        console.log(keyPress);
+        connection.write(`Move: ${direction}`);
+      } else {
+        console.log(keyPress);
+        connection.write(`Say: ${message}`);
+      }
+    }
   }
 };
 
