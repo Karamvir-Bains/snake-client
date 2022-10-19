@@ -8,11 +8,60 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["Snake Game Image"](./images/Game.png)
 
+## Installation Server
+---
+- Follow the installation steps inside the [snek server](#https://github.com/lighthouse-labs/snek-multiplayer) repo to run the server side.
 
-## Getting Started
+<br>
 
-- Follow steps inside the snek server repo to run the server side
+## Installation Client
+---
+### Clone the repository
+
+```bash
+git clone https://github.com/Karamvir-Bains/snake-client.git
+cd snake-client
+```
 - Run the development snake client using the `node play.js` command.
+
+<br>
+
+## How To Play
+---
+- Use your `WASD` keys to change your snakes direction.
+- Use can send quick messages by pressing key `1-4`.
+- Eat red dots to gain points and grow your snake.
+- Avoid collision into walls, players, or youself 
+
+<br>
+
+### Controls
+| Default Keybinds | Command  |
+|-----|-----------------------|
+| "w" | Move Up               |
+| "a" | Move Left             |
+| "s" | Move Down             |
+| "d" | Move Right            |
+| "1" | Send Message "Wow"    |
+| "2" | Send Message "OMG!"   |
+| "3" | Send Message "Close"  |
+| "4" | Send Message "GG!"    |
+
+<br>
+
+## Change Username
+---
+- Inside `constants.js` modify `PLAYER_NAME` to a maximum of 3 characters.
+
+<br>
+
+## Change Controls
+---
+- Inside `constants.js` modify the `USER_CONTROLS` object to change keybinds and messages.
+
+<br>
+
+## Change Server Connection
+- Inside `constants.js` modify the `IP` and `PORT` to connect to another server outside of localhost.
