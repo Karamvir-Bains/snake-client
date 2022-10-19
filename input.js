@@ -2,6 +2,7 @@
 let connection;
 let { USER_CONTROLS } = require("./constants");
 
+// Tracks key presses from client
 const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
@@ -12,23 +13,20 @@ const setupInput = function(conn) {
   return stdin;
 };
 
+// Handles key presses from client
 const handleUserInput = function(key) {
   if (key === '\u0003') {
     process.exit();
   }
-  
+
+  // If the key is a user control do the assigned action.
   for (const i in USER_CONTROLS) {
     if (key === USER_CONTROLS[i].keybind) {
-      const keyPress = USER_CONTROLS[i].keybind;
-      const direction = USER_CONTROLS[i].direction;
+      const moveDirection = USER_CONTROLS[i].direction;
       const message = USER_CONTROLS[i].message;
-      if (direction !== undefined) {
-        console.log(keyPress);
-        connection.write(`Move: ${direction}`);
-      } else {
-        console.log(keyPress);
-        connection.write(`Say: ${message}`);
-      }
+
+      if (moveDirection) connection.write(`Move: ${moveDirection}`);
+      if (message) connection.write(`Say: ${message}`);
     }
   }
 };
