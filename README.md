@@ -24,9 +24,9 @@ cd snake-client
 
 ## How To Play
 - Use your `WASD` keys to change your snakes direction.
-- Use can send quick messages by pressing key `1-4`.
-- Eat red dots to gain points and grow your snake.
-- Avoid collision into walls, players, or youself 
+- Use can send quick messages by pressing keys `1, 2, 3, 4`.
+- Gain points by eating the red dots.
+- Colliding into walls, players, or yourself, results in a game over.
 
 ### Controls
 | Default Keybinds | Command  |
