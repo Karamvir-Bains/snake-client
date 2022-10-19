@@ -50,7 +50,7 @@ cd snake-client
 - Inside `constants.js` modify the `IP` and `PORT` to connect to another server outside of localhost.
 
 ## Add Player Join Messages (Stretch)
-- Inside `snke-multiplayer/src/RemoteInterface.js` change `handleNewClient` to include `Brocasts New Player Has Joined`
+- Inside `snke-multiplayer/src/RemoteInterface.js` change `handleNewClient` to include `Broadcasts New Player Has Joined`
 
 ```javascript
   handleNewClient(client) {
