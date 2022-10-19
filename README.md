@@ -11,7 +11,7 @@ Before you can run this client, you will need to be running the server side whic
 !["Snake Game Image"](./images/Game.png)
 
 ## Installation Server
-- Follow the installation steps inside the [snek server](#https://github.com/lighthouse-labs/snek-multiplayer) repo to run the server side.
+- Follow the installation steps inside the [snek server](https://github.com/lighthouse-labs/snek-multiplayer) repo to run the server side.
 
 ## Installation Client
 ### Clone the repository
