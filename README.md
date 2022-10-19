@@ -11,11 +11,9 @@ Before you can run this client, you will need to be running the server side whic
 !["Snake Game Image"](./images/Game.png)
 
 ## Installation Server
----
 - Follow the installation steps inside the [snek server](#https://github.com/lighthouse-labs/snek-multiplayer) repo to run the server side.
 
 ## Installation Client
----
 ### Clone the repository
 
 ```bash
@@ -25,7 +23,6 @@ cd snake-client
 - Run the development snake client using the `node play.js` command.
 
 ## How To Play
----
 - Use your `WASD` keys to change your snakes direction.
 - Use can send quick messages by pressing key `1-4`.
 - Eat red dots to gain points and grow your snake.
@@ -44,11 +41,9 @@ cd snake-client
 | "4" | Send Message "GG!"    |
 
 ## Change Username
----
 - Inside `constants.js` modify `PLAYER_NAME` to a maximum of 3 characters.
 
 ## Change Controls
----
 - Inside `constants.js` modify the `USER_CONTROLS` object to change keybinds and messages.
 
 ## Change Server Connection
