@@ -35,6 +35,12 @@ const USER_CONTROLS = {
     message: "GG!",
   },
 };
+const OPPOSITE_DIRECTION = {
+  up: "down",
+  left: "right",
+  down: "up",
+  right: "left",
+};
 
 
 module.exports = {
@@ -42,4 +48,5 @@ module.exports = {
   PORT,
   PLAYER_NAME,
   USER_CONTROLS,
+  OPPOSITE_DIRECTION,
 };

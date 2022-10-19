@@ -1,6 +1,7 @@
 // Stores the active TCP connection object.
 let connection;
-let { USER_CONTROLS } = require("./constants");
+let currentDirection = "left";
+let { USER_CONTROLS, OPPOSITE_DIRECTION } = require("./constants");
 
 // Tracks key presses from client
 const setupInput = function(conn) {
@@ -19,17 +20,25 @@ const handleUserInput = function(key) {
     process.exit();
   }
 
-  // If the key is a user control do the assigned action.
   for (const i in USER_CONTROLS) {
     if (key === USER_CONTROLS[i].keybind) {
       const moveDirection = USER_CONTROLS[i].direction;
       const message = USER_CONTROLS[i].message;
 
-      if (moveDirection) connection.write(`Move: ${moveDirection}`);
+      // Prevents snake from changing direction to backwards
+      if (moveDirection !== OPPOSITE_DIRECTION[currentDirection]) {
+        currentDirection = moveDirection;
+      }
+
       if (message) connection.write(`Say: ${message}`);
     }
   }
 };
+
+// Snake Movement
+setInterval(() => {
+  connection.write(`Move: ${currentDirection}`);
+}, 100);
 
 module.exports = {
   setupInput
